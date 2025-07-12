@@ -4,6 +4,7 @@ import { Filter, SortAsc, Plus, TrendingUp } from 'lucide-react';
 import QuestionCard from '../components/QuestionCard';
 import Sidebar from '../components/Sidebar';
 import { useAuth } from '../App';
+import Footer from '../components/Footer';
 
 const LandingPage = () => {
   const { isAuthenticated } = useAuth();
@@ -124,6 +125,8 @@ const LandingPage = () => {
   ];
 
   return (
+    <div>
+
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -237,6 +240,8 @@ const LandingPage = () => {
         </div>
       </div>
     </motion.div>
+    <Footer />
+    </div>
   );
 };
 

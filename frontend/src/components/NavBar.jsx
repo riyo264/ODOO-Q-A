@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Menu, X, User, LogOut, Settings, Plus, Bell } from 'lucide-react';
-import { useAuth } from '../App';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Search,
+  Menu,
+  X,
+  User,
+  LogOut,
+  Settings,
+  Plus,
+  Bell,
+} from "lucide-react";
+import { useAuth } from "../App";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const { user, logout, isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
     setIsProfileOpen(false);
-    navigate('/');
+    navigate("/");
   };
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/20"
@@ -26,14 +35,14 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group text-white">
-            <motion.div 
+          <Link to="/" className="flex items-center space-x-3 group">
+            <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
               className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
             >
               <span className="text-white font-bold text-lg">Q</span>
             </motion.div>
-            <span className="font-bold text-xl hidden sm:block ">
+            <span className="font-bold text-xl gradient-text hidden sm:block">
               QuestionFlow
             </span>
           </Link>
@@ -52,7 +61,7 @@ const NavBar = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 btn-primary px-4 py-2 rounded-lg"
+                className="absolute right-2 top-1 transform-translate-y-1/2 btn-primary px-4 py-2 rounded-lg"
               >
                 Search
               </motion.button>
@@ -70,7 +79,7 @@ const NavBar = () => {
                 >
                   <Bell className="w-5 h-5 text-gray-600" />
                 </motion.button>
-                
+
                 <Link to="/ask">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -90,11 +99,16 @@ const NavBar = () => {
                     className="flex items-center space-x-2 p-2 rounded-lg glass hover:bg-white/20 transition-colors"
                   >
                     <img
-                      src={user.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`}
+                      src={
+                        user.avatar ||
+                        `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`
+                      }
                       alt={user.username}
                       className="avatar w-8 h-8"
                     />
-                    <span className="font-medium text-gray-700">{user.username}</span>
+                    <span className="font-medium text-gray-700">
+                      {user.username}
+                    </span>
                   </motion.button>
 
                   <AnimatePresence>
@@ -146,6 +160,22 @@ const NavBar = () => {
               </>
             ) : (
               <>
+                <Link to="/profile">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-1 rounded-full bg-gray-200 hover:ring-2 hover:ring-indigo-400 transition-all"
+                    title="Login to view profile"
+                  >
+                    <img
+                      src="https://api.dicebear.com/7.x/avataaars/svg?seed=anonymous"
+                      alt="Guest Avatar"
+                      className="avatar w-9 h-9"
+                    />
+                  </motion.div>
+                </Link>
+
+                {/* Login and Signup buttons */}
                 <Link to="/login">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -175,7 +205,11 @@ const NavBar = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-lg glass hover:bg-white/20 transition-colors"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </motion.button>
         </div>
 
@@ -184,7 +218,7 @@ const NavBar = () => {
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden py-4 border-t border-white/20"
             >
