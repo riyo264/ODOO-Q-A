@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const FeatureCard = ({ icon, title, description }) => {
@@ -11,5 +12,6 @@ const FeatureCard = ({ icon, title, description }) => {
     </div>
   );
 };
+
 
 export default FeatureCard;

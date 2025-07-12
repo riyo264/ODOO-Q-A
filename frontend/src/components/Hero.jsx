@@ -1,3 +1,4 @@
+
 import Spline from '@splinetool/react-spline';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -49,3 +50,4 @@ return (
 }
 
 export default Hero;
+

@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const MobileMenu = () => {
@@ -35,5 +36,6 @@ const MobileMenu = () => {
     </div>
   );
 };
+
 
 export default MobileMenu;

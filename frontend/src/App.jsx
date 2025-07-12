@@ -1,3 +1,4 @@
+
 import React, { useState, createContext, useContext } from "react";
 import {
   BrowserRouter as Router,
@@ -16,6 +17,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import ProfilePage from "./pages/ProfilePage";
 import GuestUserPage from "./pages/GuestUserPage";
 import "./App.css";
+
 
 // Auth Context
 const AuthContext = createContext();
@@ -48,8 +50,11 @@ function App() {
   };
 
   return (
+    
     <AuthContext.Provider value={authValue}>
       <Router>
+                <Route path="/" element={<Home />} />
+
         <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
           <NavBar />
           <main className="pt-20">
@@ -91,6 +96,7 @@ function App() {
         </div>
       </Router>
     </AuthContext.Provider>
+  
   );
 }
 
