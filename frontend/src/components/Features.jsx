@@ -1,3 +1,4 @@
+
 import React from 'react';
 import FeatureCard from './FeatureCard';
 
@@ -46,5 +47,6 @@ const Features = () => {
     </section>
   );
 };
+
 
 export default Features;

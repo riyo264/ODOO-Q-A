@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 
-import React, { useState, createContext, useContext } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import NavBar from './components/NavBar';
-import LandingPage from './pages/LandingPage';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
-import AskQuestion from './pages/AskQuestion';
-import QuestionDetail from './pages/QuestionDetail';
-import AdminDashboard from './pages/AdminDashboard';
-import './App.css';
+import React, { useState, createContext, useContext } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import NavBar from "./components/NavBar";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import AskQuestion from "./pages/AskQuestion";
+import QuestionDetail from "./pages/QuestionDetail";
+import AdminDashboard from "./pages/AdminDashboard";
+import ProfilePage from "./pages/ProfilePage";
+import GuestUserPage from "./pages/GuestUserPage";
+import "./App.css";
+
 
 // Auth Context
 const AuthContext = createContext();
@@ -20,7 +25,7 @@ const AuthContext = createContext();
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
@@ -41,7 +46,7 @@ function App() {
     login,
     logout,
     isAuthenticated: !!user,
-    isAdmin: user?.role === 'admin'
+    isAdmin: user?.role === "admin",
   };
 
   return (
@@ -58,18 +63,32 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
-                <Route 
-                  path="/ask" 
+                <Route
+                  path="/ask"
                   element={
-                    authValue.isAuthenticated ? <AskQuestion /> : <Navigate to="/login" />
-                  } 
+                    authValue.isAuthenticated ? (
+                      <AskQuestion />
+                    ) : (
+                      <Navigate to="/login" />
+                    )
+                  }
                 />
                 <Route path="/questions/:id" element={<QuestionDetail />} />
-                <Route 
-                  path="/admin" 
+                <Route
+                  path="/admin"
                   element={
                     authValue.isAdmin ? <AdminDashboard /> : <Navigate to="/" />
-                  } 
+                  }
+                />
+                <Route
+                  path="/profile"
+                  element={
+                    authValue.isAuthenticated ? (
+                      <ProfilePage />
+                    ) : (
+                      <GuestUserPage />
+                    )
+                  }
                 />
               </Routes>
             </AnimatePresence>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const TopicCard = ({ name, icon, questions }) => {
@@ -13,5 +14,6 @@ const TopicCard = ({ name, icon, questions }) => {
     </div>
   );
 };
+
 
 export default TopicCard;
