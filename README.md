@@ -75,7 +75,7 @@ npm install --save-dev vite
 ### 🔌 Run Development Server
 
 ```bash
-npm run dev
+npm start
 ```
 
 The app will run locally at [http://localhost:5173](http://localhost:5173)
