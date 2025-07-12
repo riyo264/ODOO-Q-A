@@ -52,3 +52,55 @@ QuestionFlow is a minimal Q&A platform intended to enable users to:
 ### 📁 Clone the repository
 
 ```bash
+https://github.com/riyo264/ODOO-Q-A.git
+cd ODOO-Q-A
+```
+
+### 📦 Install Dependencies
+
+> Make sure you're using React 18 for compatibility with some packages like `lucide-react`.
+
+```bash
+npm install react@18 react-dom@18
+npm add framer-motion@latest
+npm install --force
+```
+
+> If you haven't already installed Vite:
+
+```bash
+npm install --save-dev vite
+```
+
+### 🔌 Run Development Server
+
+```bash
+npm run dev
+```
+
+The app will run locally at [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 👥 Team Members
+
+1. **Aditya Prem**  
+   📧 [aditya.prem2003@gmail.com](mailto:aditya.prem2003@gmail.com)
+
+2. **Mehmadullah Sheikh**  
+   📧 [mehmadullahsheikh@gmail.com](mailto:mehmadullahsheikh@gmail.com)
+
+3. **Rishit Raj**  
+   📧 [rishitraj4312@gmail.com](mailto:rishitraj4312@gmail.com)
+
+4. **Supriyo Dhani**  
+   📧 [2023ugee103@nitjsr.ac.in](mailto:2023ugee103@nitjsr.ac.in)
+
+---
+
+## 📎 Mockups & Design References
+
+- [Landing & Interaction Mockup (Excalidraw)](https://link.excalidraw.com/l/65VNwvy7c4X/9mhEahV0MQg)
+
+
+
