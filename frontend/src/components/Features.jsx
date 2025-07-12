@@ -10,7 +10,7 @@ const Features = () => {
       description: "Connect with industry experts, professionals, and passionate learners who share their knowledge freely and help you grow."
     },
     {
-      icon: "fa-lightning-bolt",
+      icon: "fa-check",
       title: "Instant Answers",
       description: "Get quick, accurate answers to your questions from our active community. Most questions receive responses within minutes."
     },
