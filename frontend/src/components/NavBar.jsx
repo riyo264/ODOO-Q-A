@@ -26,14 +26,14 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 group text-white">
             <motion.div 
               whileHover={{ scale: 1.1, rotate: 5 }}
               className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
             >
               <span className="text-white font-bold text-lg">Q</span>
             </motion.div>
-            <span className="font-bold text-xl gradient-text hidden sm:block">
+            <span className="font-bold text-xl hidden sm:block ">
               QuestionFlow
             </span>
           </Link>

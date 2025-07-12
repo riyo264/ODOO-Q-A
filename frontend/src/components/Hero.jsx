@@ -4,7 +4,7 @@ import Spline from '@splinetool/react-spline';
 
 const Hero = () => {
 return (
-    <main className='relative w-full h-screen overflow-hidden'>
+    <main className='relative w-full h-screen overflow-hidden -mt-20'>
       <Link to={"/forum"} c>
             <div className='absolute inset-0 z-0 w-full h-full'>
                     <Spline
