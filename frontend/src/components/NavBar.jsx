@@ -35,14 +35,16 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-1 group  py-1 px-2.5 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
+              className="w-10 h-10  flex items-center justify-center"
             >
-              <span className="text-white font-bold text-lg">Q</span>
+              <span className="text-white font-bold text-lg ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-question-mark-icon lucide-message-circle-question-mark"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                </span>
             </motion.div>
-            <span className="font-bold text-xl gradient-text hidden sm:block">
+            <span className="font-bold text-xl text-white  hidden sm:block">
               QuestionFlow
             </span>
           </Link>

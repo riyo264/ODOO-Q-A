@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Column 1 */}
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-              QuoraClone
+              QuestionFlow
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
               Building the world's largest knowledge-sharing community where
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 QuoraClone. All rights reserved. Built with ❤️ for the
+            © 2025 QuestionFlow. All rights reserved. Built with ❤️ for the
             curious minds.
           </p>
         </div>
