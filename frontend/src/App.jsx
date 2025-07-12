@@ -16,6 +16,7 @@ import QuestionDetail from "./pages/QuestionDetail";
 import AdminDashboard from "./pages/AdminDashboard";
 import ProfilePage from "./pages/ProfilePage";
 import GuestUserPage from "./pages/GuestUserPage";
+import Home from "./pages/Home";
 import "./App.css";
 
 
@@ -53,14 +54,14 @@ function App() {
     
     <AuthContext.Provider value={authValue}>
       <Router>
-                <Route path="/" element={<Home />} />
 
         <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
           <NavBar />
           <main className="pt-20">
             <AnimatePresence mode="wait">
               <Routes>
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/forum" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route

@@ -1,15 +1,18 @@
-
+import { Link } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Hero = () => {
 return (
     <main className='relative w-full h-screen overflow-hidden'>
+      <Link to={"/forum"} c>
             <div className='absolute inset-0 z-0 w-full h-full'>
                     <Spline
             scene="https://prod.spline.design/ID-rNOJgKi48jWhl/scene.splinecode" 
         />
             </div>
+            </Link>
+            
         
         <section className="pt-[70px] relative top-1 z-10 min-h-screen flex overflow-hidden pointer-events-none items-end">
         
